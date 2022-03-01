@@ -1,0 +1,31 @@
+{
+  "name": "esm-script",
+  "version": "0.0.0",
+  "bin": "./bin/index.js",
+  "description": "A tool for (hopefully) converting CJS scripts into ESM",
+  "type": "module",
+  "scripts": {
+    "build": "wedgekit build -s",
+    "prepare": "yarn build",
+    "start": "wedgekit start -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkaffenAmtiskaw/esm-script.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SkaffenAmtiskaw/esm-script/issues"
+  },
+  "homepage": "https://github.com/SkaffenAmtiskaw/esm-script#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "fs-jetpack": "^4.3.1",
+    "sade": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@wedgekit/scripts": "^1.0.1-tc.11"
+  }
+}
