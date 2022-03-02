@@ -11,9 +11,9 @@ sade('esm-script [file]', true).describe('convert a cjs file to esm').action((fi
 
     const esmText = text
       .replace(/const (.+) = require\((.+)\);/g, (match, p1, p2) => `import ${p1} from ${p2};`)
-      .replace(/([.\s\S\n]+)(import .+ from .+;\n)([.\s\S\n]+)(require\(')(.+)('\))([.\s\S\n]+)/g, (match, p1, p2, p3, p4, p5, p6, p7) =>
-        `${p1}${p2}import ${p5} from '${p5}';
-        ${p3}${p5}${p7}`);
+      .replace(/(^[^\/#][.\s\S\n]*)(require\(')(.+)('\))([.\s\S\n]+)/g, (match, p1, p2, p3, p4, p5) =>
+        `import ${p3} from '${p3}';
+        ${p1}${p3}${p5}`);
 
     jetpack.write(file, esmText);
   } else {
